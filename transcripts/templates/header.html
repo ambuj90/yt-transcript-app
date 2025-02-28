@@ -1,0 +1,19 @@
+<header>
+  <div class="navbar">
+    <div class="logo">
+      <a href="{% url 'home' %}">YT Transcript</a>
+    </div>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="{% url 'home' %}">Home</a></li>
+        {% comment %}
+        <li><a href="{% url 'get_transcript' %}">Get Transcript</a></li>
+        {% endcomment %}
+        <li><a href="{% url 'terms_of_service' %}">Terms</a></li>
+        <li><a href="{% url 'privacy_policy' %}">Privacy</a></li>
+      </ul>
+      <div class="menu-toggle">&#9776;</div>
+      <!-- Hamburger Menu -->
+    </nav>
+  </div>
+</header>

@@ -1,0 +1,21 @@
+# Byte-compiled / Python
+*.pyc
+__pycache__/
+
+# Virtual Environment
+venv/
+yt_transcript_env/
+
+# Django Secret Key
+.env
+
+# Database
+*.sqlite3
+
+# Static & Media
+/static/
+media/
+
+# Logs & Cache
+*.log
+*.pid

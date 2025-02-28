@@ -1,0 +1,28 @@
+{% extends "base.html" %} {% block content %}
+
+<div class="container">
+  <h1 class="title">YouTube Transcript Generator</h1>
+  <p class="description">
+    Easily convert YouTube videos to text transcripts for free online with
+    <span>AmbujGPT</span>. Download or copy the transcripts with timestamps.
+  </p>
+
+  <div class="input-wrapper">
+    <form method="GET" action="{% url 'get_transcript' %}">
+      <input
+        type="text"
+        name="url"
+        id="youtube-url"
+        placeholder="Paste YouTube Video URL Here..."
+        required
+      />
+      <div class="button-group">
+        <button type="submit" class="btn generate-btn">
+          Generate & Download Transcript
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
+
+{% endblock %}
