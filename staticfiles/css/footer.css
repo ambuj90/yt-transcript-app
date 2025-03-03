@@ -1,0 +1,82 @@
+/* Footer Styling */
+.footer {
+  background-color: #111;
+  color: white;
+  padding: 20px 0;
+  font-size: 14px;
+  text-align: center;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1100px;
+  margin: auto;
+  flex-wrap: wrap;
+}
+
+/* Left Section */
+.footer-left {
+  flex: 1;
+  text-align: left;
+  padding-left: 20px;
+}
+
+.footer-logo {
+  width: 120px;
+  margin-bottom: 10px;
+}
+
+/* Center Section */
+.footer-center {
+  flex: 1;
+  text-align: center;
+}
+
+.footer-links {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-links li {
+  display: inline;
+  margin: 0 10px;
+}
+
+.footer-links a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.footer-links a:hover {
+  color: red;
+}
+
+/* Right Section */
+.footer-right {
+  flex: 1;
+  text-align: right;
+  padding-right: 20px;
+}
+
+.social-icons {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.social-icons a {
+  color: white;
+  font-size: 20px;
+  margin: 0 10px;
+  transition: 0.3s;
+}
+
+.social-icons a:hover {
+  color: red;
+}

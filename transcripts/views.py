@@ -1,7 +1,14 @@
 from django.shortcuts import render
 from youtube_transcript_api import YouTubeTranscriptApi
 from youtube_transcript_api._errors import TranscriptsDisabled, NoTranscriptFound
+import requests
 import csv
+
+# Use a free proxy to prevent rate limiting
+PROXY = {
+    "http": "http://149.28.123.65:8080",  # Replace with a working proxy
+    "https": "http://149.28.123.65:8080"
+}
 
 def get_transcript(request):
     if request.method == "POST":
@@ -25,8 +32,8 @@ def get_transcript(request):
             })
 
         try:
-            # ✅ Fetch transcript using youtube_transcript_api
-            transcript = YouTubeTranscriptApi.get_transcript(video_id)
+            # ✅ Use a proxy to fetch the transcript
+            transcript = YouTubeTranscriptApi.get_transcript(video_id, proxies=PROXY)
 
             # ✅ Convert transcript into a readable format
             transcript_text = "\n".join([entry["text"] for entry in transcript])
@@ -63,7 +70,6 @@ def get_transcript(request):
     return render(request, 'transcripts/home.html')
 
 
-
 def home(request):
     return render(request, 'transcripts/home.html')
 
@@ -74,3 +80,6 @@ def terms_of_service(request):
 
 def privacy_policy(request):
     return render(request, 'transcripts/privacy_policy.html')
+
+
+time.sleep(2)
