@@ -82,4 +82,3 @@ def privacy_policy(request):
     return render(request, 'transcripts/privacy_policy.html')
 
 
-time.sleep(2)
