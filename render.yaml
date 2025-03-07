@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: django-app
+    env: python
+    buildCommand: "pip install -r requirements.txt && python manage.py migrate"
+    startCommand: "gunicorn yt_transcript_project.wsgi:application"
+    envVars:
+      - key: DATABASE_URL
+        fromDatabase: postgres
+      - key: SECRET_KEY
+        sync: false
