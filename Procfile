@@ -1,1 +1,1 @@
-web: gunicorn yt_transcript_project.wsgi
+web: gunicorn yt_transcript_project.wsgi:application
