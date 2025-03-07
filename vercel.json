@@ -1,4 +1,5 @@
 {
+  "version": 2,
   "builds": [
     {
       "src": "yt_transcript_project/wsgi.py",
