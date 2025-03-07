@@ -37,7 +37,9 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
-    'transcripts',
+    "transcript",  # ✅ Correct (Singular)
+    "rest_framework",
+    "corsheaders",
 ]
 
 MIDDLEWARE = [
@@ -49,7 +51,11 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    "corsheaders.middleware.CorsMiddleware",
 ]
+
+
+CORS_ALLOW_ALL_ORIGINS = True
 
 ROOT_URLCONF = "yt_transcript_project.urls"
 
@@ -120,7 +126,8 @@ USE_TZ = True
 import os
 STATIC_ROOT = BASE_DIR / 'staticfiles'
 STATIC_URL = "/static/"
-STATICFILES_DIRS = [os.path.join(BASE_DIR, 'transcripts/static')]
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
+
 # Enable WhiteNoise for serving static files
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
