@@ -1,5 +1,6 @@
 {
   "version": 2,
+  "public": true,
   "builds": [
     {
       "src": "yt_transcript_project/wsgi.py",
@@ -7,9 +8,7 @@
     }
   ],
   "routes": [
-    {
-      "src": "/(.*)",
-      "dest": "yt_transcript_project/wsgi.py"
-    }
+    { "src": "/api/.*", "dest": "yt_transcript_project/wsgi.py" },
+    { "src": "/(.*)", "dest": "transcript/templates/home.html" }
   ]
 }
