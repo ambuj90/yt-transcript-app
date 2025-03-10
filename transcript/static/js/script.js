@@ -116,10 +116,35 @@
 
 
 document.addEventListener("DOMContentLoaded", function () {
+    const toggleDarkModeBtn = document.getElementById("toggle-dark-mode");
     const videoInput = document.getElementById("video-url");
     const downloadTXTBtn = document.getElementById("download-txt");
     const downloadPDFBtn = document.getElementById("download-pdf");
     const downloadCSVBtn = document.getElementById("download-csv");
+
+    // ✅ Dark Mode - Check Local Storage & Apply
+    function applyDarkMode() {
+        if (localStorage.getItem("darkMode") === "enabled") {
+            document.body.classList.add("dark-mode");
+            toggleDarkModeBtn.innerText = "☀️ Light Mode";
+        } else {
+            document.body.classList.remove("dark-mode");
+            toggleDarkModeBtn.innerText = "🌙 Dark Mode";
+        }
+    }
+
+    // ✅ Toggle Dark Mode
+    toggleDarkModeBtn.addEventListener("click", function () {
+        if (document.body.classList.contains("dark-mode")) {
+            localStorage.setItem("darkMode", "disabled");
+        } else {
+            localStorage.setItem("darkMode", "enabled");
+        }
+        applyDarkMode();
+    });
+
+    // ✅ Apply Dark Mode on Page Load
+    applyDarkMode();
 
     // ✅ Hide Download Buttons Initially
     downloadTXTBtn.style.display = "none";
